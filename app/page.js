@@ -1,5 +1,5 @@
 import SearchBoxes from "@/components/layout/SearchBoxes";
-import ServicesPage from "./services/page";
+import ServicesPage from "./services/[[...params]]/page";
 
 export default function Home() {
   return (

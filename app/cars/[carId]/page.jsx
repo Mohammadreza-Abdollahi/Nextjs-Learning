@@ -1,4 +1,7 @@
-const CarItemPage = ({params}) => {
+const CarItemPage = ({params , searchParams}) => {
+  const formatNumber = (num)=>{
+    return new Intl.NumberFormat('en-US').format(num);
+  }
   return (
     <>
       <div style={{margin:"auto",marginTop:140,marginBottom:50,width: 350}}>
@@ -9,7 +12,7 @@ const CarItemPage = ({params}) => {
             </div>
             <div className="featured-model-info">
               <p>
-                model: 2017
+                model: {searchParams.model ? searchParams.model : 'Undefined'}
                 <span className="featured-mi-span"> 3100 mi</span>
                 <span className="featured-hp-span"> 240HP</span>
                 automatic
@@ -19,13 +22,12 @@ const CarItemPage = ({params}) => {
           <div className="featured-cars-txt">
             <h2>
               <a href="#">
-                lamborghini <span>v520</span>
+                {searchParams.name ? searchParams.name : "Undefined"}
               </a>
             </h2>
-            <h3>$125,250</h3>
+            <h3>$ {searchParams.price ? formatNumber(searchParams.price) : "Undefined"}</h3>
             <p>
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-              consectetur, adipisci velit, sed quia non.
+              {searchParams.description ? searchParams.description : "Undefined"}
             </p>
           </div>
         </div>

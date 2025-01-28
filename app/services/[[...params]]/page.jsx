@@ -1,4 +1,6 @@
-const ServicesPage = () => {
+'use client'
+const ServicesPage = (props) => {
+  console.log(props.params);
   return (
     <section id="service" className="service">
       <div className="container">
