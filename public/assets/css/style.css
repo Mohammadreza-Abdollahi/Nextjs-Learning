@@ -231,12 +231,12 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     font-size: 42px;
     color: #fff;
     font-weight: 700;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 45px;
 }
 .welcome-hero-txt p {
     font-size: 18px;
-    text-transform: initial;
+    /* text-transform: initial; */
     color: #fff;
     font-weight: 500;
     max-width: 735px;

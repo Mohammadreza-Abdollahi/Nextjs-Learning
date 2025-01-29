@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "My Personal Page",
+  title: "Shop",
   description: "this is a Profile From Me , My Name is Mohammadreza Abdollahi",
 };
 

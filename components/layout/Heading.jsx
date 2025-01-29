@@ -12,7 +12,7 @@ const Heading = () => {
       <link
         rel="shortcut icon"
         type="image/icon"
-        href="assets/logo/favicon.png"
+        href="/assets/logo/favicon.png"
       />
       <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
       <link rel="stylesheet" href="/assets/css/linearicons.css" />

@@ -1,7 +1,6 @@
 const Header = () => {
   return (
-    <header>
-      <div className="top-area">
+      <header className="top-area">
         <div className="header-area">
           <nav
             className="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy navbar-bg"
@@ -56,8 +55,7 @@ const Header = () => {
           </nav>
         </div>
         <div className="clearfix"></div>
-      </div>
-    </header>
+      </header>
   );
 };
 

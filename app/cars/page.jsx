@@ -1,3 +1,7 @@
+export const metadata = {
+  title : "Shop | Cars"
+}
+
 const CarsPage = () => {
   return (
     <>

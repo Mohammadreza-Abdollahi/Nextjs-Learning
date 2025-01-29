@@ -1,4 +1,8 @@
-'use client'
+// 'use client'
+
+export const metadata = {
+  title : "Shop | Services"
+}
 const ServicesPage = (props) => {
   console.log(props.params);
   return (

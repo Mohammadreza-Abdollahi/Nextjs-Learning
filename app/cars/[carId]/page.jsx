@@ -1,3 +1,8 @@
+export const generateMetadata = ({params , searchParams})=>{
+  return {
+    title : `Car Number ${params.carId}`
+  }
+}
 const CarItemPage = ({params , searchParams}) => {
   const formatNumber = (num)=>{
     return new Intl.NumberFormat('en-US').format(num);
