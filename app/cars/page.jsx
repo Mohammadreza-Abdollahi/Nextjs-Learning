@@ -1,11 +1,67 @@
-export const metadata = {
-  title : "Shop | Cars"
-}
+import Link from "next/link";
+import { formatNumber } from "../layout";
 
+export const metadata = {
+  title: "Shop | Cars",
+};
+const cars = [
+  {
+    id: 1,
+    model: 2017,
+    name: "BMW 6-series gran coupe",
+    price: 89395,
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
+  },
+  {
+    id: 2,
+    model: 2019,
+    name: "Chevrolet Camaro WMV20",
+    price: 66575,
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
+  },
+  {
+    id: 3,
+    model: 2018,
+    name: "Lamborghini V520",
+    price: 125250,
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
+  },
+  {
+    id: 4,
+    model: 2019,
+    name: "Audi A3 Sedan",
+    price: 95500,
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
+  },
+  {
+    id: 5,
+    model: 2021,
+    name: "Infiniti Z5",
+    price: 36850,
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
+  },
+  {
+    id: 6,
+    model: 2019,
+    name: "Porsche 718 Cayman",
+    price: 48500,
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non.",
+  },
+];
 const CarsPage = () => {
   return (
     <>
-      <section id="featured-cars" className="featured-cars" style={{marginTop: 50}}>
+      <section
+        id="featured-cars"
+        className="featured-cars main-cont"
+        style={{ marginTop: 50 }}
+      >
         <div className="container">
           <div className="section-header">
             <p>
@@ -13,266 +69,32 @@ const CarsPage = () => {
             </p>
             <h2>featured cars</h2>
           </div>
-          <div className="featured-cars-content">
-            <div className="row">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc1.png"
-                        alt="cars"
-                      />
+          {cars.map((item, index) => (
+            <div className="featured-cars-content cars-item" key={index}>
+                  <div className="single-featured-cars">
+                    <div className="featured-img-box">
+                      <div className="featured-cars-img">
+                        <img
+                          src={`assets/images/featured-cars/fc${item.id}.png`}
+                          alt="cars"
+                        />
+                      </div>
+                      <div className="featured-model-info">
+                        <p>model: {item.model}</p>
+                      </div>
                     </div>
-                    <div className="featured-model-info">
+                    <div className="featured-cars-txt">
+                      <h2>
+                        <Link className="name-link" href={`/cars/${item.id}?model=${item.model}&name=${item.name}&price=${item.price}&description=${item.description}`}>{item.name}</Link>
+                      </h2>
+                      <h3>$ {formatNumber(item.price)}</h3>
                       <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
+                        {item.description}
                       </p>
                     </div>
                   </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">BMW 6-series gran coupe</a>
-                    </h2>
-                    <h3>$89,395</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc2.png"
-                        alt="cars"
-                      />
-                    </div>
-                    <div className="featured-model-info">
-                      <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
-                      </p>
-                    </div>
-                  </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">
-                        chevrolet camaro <span>wmv20</span>
-                      </a>
-                    </h2>
-                    <h3>$66,575</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc3.png"
-                        alt="cars"
-                      />
-                    </div>
-                    <div className="featured-model-info">
-                      <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
-                      </p>
-                    </div>
-                  </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">
-                        lamborghini <span>v520</span>
-                      </a>
-                    </h2>
-                    <h3>$125,250</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc4.png"
-                        alt="cars"
-                      />
-                    </div>
-                    <div className="featured-model-info">
-                      <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
-                      </p>
-                    </div>
-                  </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">
-                        audi <span> a3</span> sedan
-                      </a>
-                    </h2>
-                    <h3>$95,500</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div className="row">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc4.png"
-                        alt="cars"
-                      />
-                    </div>
-                    <div className="featured-model-info">
-                      <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
-                      </p>
-                    </div>
-                  </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">
-                        infiniti <span>z5</span>
-                      </a>
-                    </h2>
-                    <h3>$36,850</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc5.png"
-                        alt="cars"
-                      />
-                    </div>
-                    <div className="featured-model-info">
-                      <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
-                      </p>
-                    </div>
-                  </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">
-                        porsche <span>718</span> cayman
-                      </a>
-                    </h2>
-                    <h3>$48,500</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc7.png"
-                        alt="cars"
-                      />
-                    </div>
-                    <div className="featured-model-info">
-                      <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
-                      </p>
-                    </div>
-                  </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">
-                        <span>bmw 8-</span>series coupe
-                      </a>
-                    </h2>
-                    <h3>$56,000</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <div className="single-featured-cars">
-                  <div className="featured-img-box">
-                    <div className="featured-cars-img">
-                      <img
-                        src="assets/images/featured-cars/fc8.png"
-                        alt="cars"
-                      />
-                    </div>
-                    <div className="featured-model-info">
-                      <p>
-                        model: 2017
-                        <span className="featured-mi-span"> 3100 mi</span>
-                        <span className="featured-hp-span"> 240HP</span>
-                        automatic
-                      </p>
-                    </div>
-                  </div>
-                  <div className="featured-cars-txt">
-                    <h2>
-                      <a href="#">
-                        BMW <span> x</span>series-6
-                      </a>
-                    </h2>
-                    <h3>$75,800</h3>
-                    <p>
-                      Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                      amet, consectetur, adipisci velit, sed quia non.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </>

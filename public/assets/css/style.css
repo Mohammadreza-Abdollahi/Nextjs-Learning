@@ -250,11 +250,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     color: #fff;
     border-radius: 3px;
     margin-top: 55px;
-    -webkit-transition: .3s linear; 
+    /* -webkit-transition: .3s linear; 
     -moz-transition:.3s linear; 
     -ms-transition:.3s linear; 
     -o-transition:.3s linear;
-    transition: .3s linear;
+    transition: .3s linear; */
 }
 .welcome-btn:hover{
     background: #0102fa;
@@ -712,5 +712,19 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
 @keyframes example {
     0%   {bottom:0px;}
     100%  {bottom:7px;}
+}
+.main-cont{
+    display: flex;
+    justify-content: center;
+}
+.cars-item{
+    display: inline-block;
+    width: 30%;
+    margin: 0px 15px;
+    text-align: center;
+}
+ h2 .name-link:hover{
+    color: #0102fa !important;
+    transition: all .3s;
 }
 /*========================Thank you=================

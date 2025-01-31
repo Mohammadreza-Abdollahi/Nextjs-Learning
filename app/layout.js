@@ -18,7 +18,9 @@ export const metadata = {
   title: "Shop",
   description: "this is a Profile From Me , My Name is Mohammadreza Abdollahi",
 };
-
+export const formatNumber = (num)=>{
+  return new Intl.NumberFormat('en-US').format(num);
+}
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -1,4 +1,13 @@
+"use client"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+  {title: "Services" , path: "/services"},
+  {title: "Cars" , path: "/cars"},
+]
 const Header = () => {
+  const pathName = usePathname();
   return (
       <header className="top-area">
         <div className="header-area">
@@ -31,24 +40,16 @@ const Header = () => {
                   data-in="fadeInDown"
                   data-out="fadeOutUp"
                 >
-                  <li className=" scroll active">
-                    <a href="#home">home</a>
-                  </li>
                   <li className="scroll">
-                    <a href="#service">service</a>
+                    <Link href="/" style={{color: pathName === "/" && "blue"}}>Home</Link>
                   </li>
-                  <li className="scroll">
-                    <a href="#featured-cars">featured cars</a>
-                  </li>
-                  <li className="scroll">
-                    <a href="#new-cars">new cars</a>
-                  </li>
-                  <li className="scroll">
-                    <a href="#brand">brands</a>
-                  </li>
-                  <li className="scroll">
-                    <a href="#contact">contact</a>
-                  </li>
+                  {
+                    links.map((item , index)=>(
+                      <li className="scroll" key={index}>
+                        <Link href={item.path} style={{color: pathName.startsWith(item.path) && "blue"}}>{item.title}</Link>
+                      </li>
+                    ))
+                  }
                 </ul>
               </div>
             </div>

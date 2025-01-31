@@ -1,12 +1,11 @@
+import { formatNumber } from "@/app/layout";
+
 export const generateMetadata = ({params , searchParams})=>{
   return {
     title : `Car Number ${params.carId}`
   }
 }
 const CarItemPage = ({params , searchParams}) => {
-  const formatNumber = (num)=>{
-    return new Intl.NumberFormat('en-US').format(num);
-  }
   return (
     <>
       <div style={{margin:"auto",marginTop:140,marginBottom:50,width: 350}}>
@@ -26,9 +25,7 @@ const CarItemPage = ({params , searchParams}) => {
           </div>
           <div className="featured-cars-txt">
             <h2>
-              <a href="#">
                 {searchParams.name ? searchParams.name : "Undefined"}
-              </a>
             </h2>
             <h3>$ {searchParams.price ? formatNumber(searchParams.price) : "Undefined"}</h3>
             <p>
